@@ -1,0 +1,16 @@
+{
+  "presets": [
+    "babel-preset-gatsby-package",
+    "@babel/preset-typescript"
+  ],
+  "plugins": [
+    [
+      "babel-plugin-module-resolver",
+      {
+        "alias": {
+          "~": "./src"
+        }
+      }
+    ]
+  ]
+}

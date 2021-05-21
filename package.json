@@ -1,0 +1,73 @@
+{
+  "name": "gatsby-source-notion-articles",
+  "version": "1.0.0",
+  "description": "Gatsby source plugin to import articles made in Notion",
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "gatsby-source-plugin",
+    "notion",
+    "notion-api"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thedaviddias/gatsby-source-notion-articles.git"
+  },
+  "license": "MIT",
+  "author": "David Dias <hello@thedaviddias.dev>",
+  "scripts": {
+    "build": "babel src --out-dir dist/ --ignore \"src/__tests__\" --ignore \"src/mockData\" --extensions \".ts\"",
+    "lint": "eslint --fix --ext .ts,.js --max-warnings 0",
+    "prepare": "cross-env NODE_ENV=production npm run build && npm run typegen",
+    "test": "jest",
+    "test:coverage": "npm test -- --coverage --watchAll=false ./src",
+    "test:watch": "jest --watchAll ./src",
+    "typecheck": "tsc",
+    "typegen": "rimraf \"dist/**/*.d.ts\" && tsc --emitDeclarationOnly --declaration --declarationDir dist/",
+    "watch": "babel -w src --out-dir dist/ --ignore \"src/__tests__\" --ignore \"src/mockData\" --extensions \".ts\""
+  },
+  "dependencies": {
+    "@babel/runtime": "7.14.0",
+    "@notionhq/client": "0.1.3",
+    "dotenv": "10.0.0",
+    "rimraf": "3.0.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.14.3",
+    "@babel/core": "7.14.3",
+    "@babel/plugin-proposal-private-methods": "7.13.0",
+    "@babel/preset-typescript": "7.13.0",
+    "@semantic-release/changelog": "5.0.1",
+    "@semantic-release/git": "9.0.0",
+    "@semantic-release/npm": "7.1.3",
+    "@types/jest": "26.0.23",
+    "@types/node": "15.3.0",
+    "@typescript-eslint/eslint-plugin": "4.24.0",
+    "@typescript-eslint/parser": "4.24.0",
+    "babel-jest": "26.6.3",
+    "babel-plugin-module-resolver": "4.1.0",
+    "babel-preset-gatsby-package": "1.5.0",
+    "cross-env": "7.0.3",
+    "eslint": "7.26.0",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-import": "2.23.2",
+    "eslint-plugin-prettier": "3.4.0",
+    "jest": "26.6.3",
+    "jest-cli": "26.6.3",
+    "json-stringify-safe": "5.0.1",
+    "nock": "13.0.11",
+    "prettier": "2.3.0",
+    "semantic-release": "17.4.3",
+    "ts-jest": "26.5.6",
+    "typescript": "4.2.4"
+  },
+  "peerDependencies": {
+    "gatsby": "^3.0.0-next.0"
+  },
+  "engines": {
+    "node": ">=14.x",
+    "npm": ">=5",
+    "yarn": ">=1"
+  },
+  "engineStrict": true
+}

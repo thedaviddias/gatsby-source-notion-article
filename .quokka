@@ -1,0 +1,8 @@
+{
+  "pro": true,
+  "node": "~/.nvm/current/bin/node",
+  "babel": {
+    "ts": true
+  },
+  "plugins": ["jsdom-quokka-plugin"]
+}

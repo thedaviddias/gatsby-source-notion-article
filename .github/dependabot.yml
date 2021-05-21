@@ -1,0 +1,22 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "sunday"
+      time: "08:00"
+      timezone: "America/Toronto"
+    allow:
+      - dependency-type: "all"
+    commit-message:
+      prefix: "fix"
+      prefix-development: "chore"
+      include: "scope"
+    assignees:
+      - "thedaviddias"
+    labels:
+      - "dependencies"
+      - "dependabot"
+    # Disable version updates for npm dependencies
+    # open-pull-requests-limit: 5

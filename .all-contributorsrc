@@ -1,0 +1,27 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "thedaviddias",
+      "name": "David Dias",
+      "avatar_url": "https://avatars.githubusercontent.com/u/237229?v=4",
+      "profile": "https://thedaviddias.dev",
+      "contributions": [
+        "code",
+        "doc",
+        "infra",
+        "test"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "gatsby-source-notion-articles",
+  "projectOwner": "thedaviddias",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}

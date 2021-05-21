@@ -1,0 +1,14 @@
+---
+# labels auto assigned to PR, keep in sync with labels.yml
+test:
+  - src/**/*.test.**
+dependencies:
+  - package.json
+  - yarn.lock
+  - package-lock.json
+documentation:
+  -**.md
+  -**/**/*.md
+automation:
+  - .github/*
+  - .github/**/*

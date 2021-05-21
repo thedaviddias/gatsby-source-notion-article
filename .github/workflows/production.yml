@@ -1,0 +1,52 @@
+name: Production workflow
+
+on:
+  push:
+    branches: [main, next]
+
+jobs:
+  build:
+    if: "!contains(github.event.head_commit.message, 'skip ci')"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v2
+
+      - name: Caching Node Modules
+        uses: actions/cache@v2
+        with:
+          path: |
+            **/node_modules
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Use Node.js 15.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: 15.x
+
+      - name: 🧰 Install dependencies
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        run: yarn install
+
+      - name: 🧹 Run lint
+        run: yarn lint
+
+      - name: 🐛 Run tests
+        run: yarn test:coverage
+
+      - name: 🔥 Upload test coverage report
+        uses: codecov/codecov-action@v1
+        with:
+          files: ./coverage/lcov.info
+
+      - name: ⚙️ Build project
+        run: yarn build
+
+      - name: Run Semantic Release
+        if: success()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx semantic-release
