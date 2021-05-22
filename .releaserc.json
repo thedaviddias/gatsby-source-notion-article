@@ -1,6 +1,6 @@
 {
-  "branches": ["main", "next"],
-  "repositoryUrl": "https://github.com/thedaviddias/gatsby-source-notion-articles",
+  "branches": ["main"],
+  "repositoryUrl": "https://github.com/thedaviddias/gatsby-source-notion-article",
   "debug": "true",
   "plugins": [
     "@semantic-release/commit-analyzer",

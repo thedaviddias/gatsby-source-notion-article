@@ -1,6 +1,6 @@
 # Gatsby Source Notion Articles
-[![CI](https://github.com/thedaviddias/gatsby-source-notion-articles/actions/workflows/production.yml/badge.svg)](https://github.com/thedaviddias/gatsby-source-notion-articles/actions/workflows/production.yml)
-[![codecov](https://codecov.io/gh/thedaviddias/gatsby-source-notion-articles/branch/main/graph/badge.svg?token=v51j0wzBSl)](https://codecov.io/gh/thedaviddias/gatsby-source-notion-articles)<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg)](#contributors-)<!-- ALL-CONTRIBUTORS-BADGE:END -->
+[![CI](https://github.com/thedaviddias/gatsby-source-notion-article/actions/workflows/production.yml/badge.svg)](https://github.com/thedaviddias/gatsby-source-notion-article/actions/workflows/production.yml)
+[![codecov](https://codecov.io/gh/thedaviddias/gatsby-source-notion-article/branch/main/graph/badge.svg?token=v51j0wzBSl)](https://codecov.io/gh/thedaviddias/gatsby-source-notion-article)<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg)](#contributors-)<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 > A Gatsby source plugin for importing articles made in Notion into your Gatsby application using Notion API.
 
@@ -10,10 +10,10 @@
 
 ```sh
 # using npm
-npm install gatsby-source-notion-articles
+npm install gatsby-source-notion-article
 
 # using yarn
-yarn add gatsby-source-notion-articles
+yarn add gatsby-source-notion-article
 ```
 
 ## How to configure
@@ -46,7 +46,7 @@ NOTION_DATABASE_ID=<your-notion-database-id>
 module.exports = {
   plugins: [
     {
-      resolve: `gatsby-source-notion-articles`,
+      resolve: `gatsby-source-notion-article`,
       options: {
         // Learn about environment variables: https://gatsby.dev/env-vars
         token: process.env.NOTION_KEY, // required
@@ -159,7 +159,7 @@ Thanks goes to these wonderful people
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://thedaviddias.dev"><img src="https://avatars.githubusercontent.com/u/237229?v=4?s=100" width="100px;" alt=""/><br /><sub><b>David Dias</b></sub></a><br /><a href="https://github.com/thedaviddias/gatsby-source-notion-articles/commits?author=thedaviddias" title="Code">💻</a> <a href="https://github.com/thedaviddias/gatsby-source-notion-articles/commits?author=thedaviddias" title="Documentation">📖</a> <a href="#infra-thedaviddias" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/thedaviddias/gatsby-source-notion-articles/commits?author=thedaviddias" title="Tests">⚠️</a></td>
+    <td align="center"><a href="https://thedaviddias.dev"><img src="https://avatars.githubusercontent.com/u/237229?v=4?s=100" width="100px;" alt=""/><br /><sub><b>David Dias</b></sub></a><br /><a href="https://github.com/thedaviddias/gatsby-source-notion-article/commits?author=thedaviddias" title="Code">💻</a> <a href="https://github.com/thedaviddias/gatsby-source-notion-article/commits?author=thedaviddias" title="Documentation">📖</a> <a href="#infra-thedaviddias" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/thedaviddias/gatsby-source-notion-article/commits?author=thedaviddias" title="Tests">⚠️</a></td>
   </tr>
 </table>
 
@@ -189,6 +189,6 @@ See [MIT Licence, 2021 David Dias](./LICENSE)
 [databaseTemplate]: https://www.notion.so/gatsbysourcenotionarticles/f105a175e01b437d85a7b433d637bf14
 [notionIntegration]: https://www.notion.so/my-integrations
 [notionIntegrationDoc]: https://developers.notion.com/docs/getting-started#create-a-new-integration
-[discussion]: https://github.com/thedaviddias/gatsby-source-notion-articles/discussions
-[newissue]: https://github.com/thedaviddias/gatsby-source-notion-articles/issues/new
-[sample]: https://github.com/thedaviddias/gatsby-source-notion-articles-sample
+[discussion]: https://github.com/thedaviddias/gatsby-source-notion-article/discussions
+[newissue]: https://github.com/thedaviddias/gatsby-source-notion-article/issues/new
+[sample]: https://github.com/thedaviddias/gatsby-source-notion-article-sample

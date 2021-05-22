@@ -1,5 +1,5 @@
 {
-  "name": "gatsby-source-notion-articles",
+  "name": "gatsby-source-notion-article",
   "version": "1.0.0",
   "description": "Gatsby source plugin to import articles made in Notion",
   "keywords": [
@@ -11,7 +11,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/thedaviddias/gatsby-source-notion-articles.git"
+    "url": "https://github.com/thedaviddias/gatsby-source-notion-article.git"
   },
   "license": "MIT",
   "author": "David Dias <hello@thedaviddias.dev>",
