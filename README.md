@@ -1,4 +1,4 @@
-# Gatsby Source Notion Articles
+# Gatsby Source Notion Article
 [![CI](https://github.com/thedaviddias/gatsby-source-notion-article/actions/workflows/production.yml/badge.svg)](https://github.com/thedaviddias/gatsby-source-notion-article/actions/workflows/production.yml)
 [![codecov](https://codecov.io/gh/thedaviddias/gatsby-source-notion-article/branch/main/graph/badge.svg?token=v51j0wzBSl)](https://codecov.io/gh/thedaviddias/gatsby-source-notion-article)<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg)](#contributors-)<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
