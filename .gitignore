@@ -70,7 +70,6 @@ yarn-error.log
 .yarn-integrity
 
 /__tests__
-/yarn.lock
 
 !index.js
 
