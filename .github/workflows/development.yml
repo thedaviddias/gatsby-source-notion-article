@@ -32,6 +32,9 @@ jobs:
       - name: 🧹 Run lint
         run: yarn lint
 
+      - name: 🔗 Run check links
+        run: yarn run check-links
+
       - name: 🐛 Run tests
         run: yarn test:coverage
 
