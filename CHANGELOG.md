@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/thedaviddias/gatsby-source-notion-article/compare/v1.0.0...v1.0.1) (2021-05-25)
+
+
+### Bug Fixes
+
+* Fix broken links in readme file ([#6](https://github.com/thedaviddias/gatsby-source-notion-article/issues/6)) ([8cd93d0](https://github.com/thedaviddias/gatsby-source-notion-article/commit/8cd93d078002568e8d59d6905c3a1d81c62e03b6))
+
 # 1.0.0 (2021-05-22)
 
 
