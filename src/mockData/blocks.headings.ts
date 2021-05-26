@@ -4,6 +4,7 @@
 //   HeadingTwoBlock,
 // } from '@notionhq/client/build/src/api-types'
 import { MockBlockBase, defaultAnnotations } from './defaults'
+import { BlockType } from '../types'
 
 const MockHeadingOneBase = {
   ...MockBlockBase,
@@ -22,7 +23,7 @@ const MockHeadingThreeBase = {
 
 export const MockHeadingOne = {
   ...MockHeadingOneBase,
-  heading_1: {
+  [BlockType.HEADING_1]: {
     text: [
       {
         type: 'text',
@@ -39,7 +40,7 @@ export const MockHeadingOne = {
 
 export const MockHeadingTwo = {
   ...MockHeadingTwoBase,
-  heading_2: {
+  [BlockType.HEADING_2]: {
     text: [
       {
         type: 'text',
@@ -56,7 +57,7 @@ export const MockHeadingTwo = {
 
 export const MockHeadingThree = {
   ...MockHeadingThreeBase,
-  heading_3: {
+  [BlockType.HEADING_3]: {
     text: [
       {
         type: 'text',
