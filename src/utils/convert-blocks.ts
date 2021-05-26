@@ -9,13 +9,15 @@ export const filterCssClasses = ({
   strikethrough,
   underline,
 }: Annotations): string => {
+  const isDefaultColor = color === 'default' || color === undefined
+
   const annotationsList = [
-    bold ? 'gs-bold' : '',
-    code ? 'gs-code' : '',
-    italic ? 'gs-italic' : '',
-    strikethrough ? 'gs-strikethrough' : '',
-    underline ? 'gs-underline' : '',
-    color !== 'default' ? `gs-${color}` : '',
+    bold ? 'data-notion-annotation="bold"' : '',
+    code ? 'data-notion-annotation="code"' : '',
+    italic ? 'data-notion-annotation="italic"' : '',
+    strikethrough ? 'data-notion-annotation="strikethrough"' : '',
+    underline ? 'data-notion-annotation="underline"' : '',
+    !isDefaultColor ? `data-notion-color="${color}"` : '',
   ]
     .filter(Boolean)
     .join(' ')
@@ -34,7 +36,9 @@ const convertToHTML = (texts): string => {
     const classes = filterCssClasses(annotations)
     const content = text.content.replace(/^\s+|\s+$/g, '')
 
-    return `<span ${classes.length ? `class=${classes}` : ''}>${
+    const dataAttr = classes.length > 0 ? ` data-notion=${classes}` : ''
+
+    return `<span${dataAttr}>${
       text.link ? `<a href=${text.link.url}>${content}</a>` : content
     }</span>`
   })
@@ -60,15 +64,15 @@ export const convertBlockToHTML = (blocks, options: ICreatePluginConfigRes): str
       case BlockType.NUMBERED_LIST:
         return `<li>${convertToHTML(value.text)}</li>`
       case BlockType.TO_DO:
-        return `<div class="gs-todo"><label for="${id}"><input type="checkbox" id="${id}" ${
+        return `<div data-notion="todo"><label for="${id}"><input type="checkbox" id="${id}" ${
           value.checked ? 'checked' : ''
         } />${' '}${convertToHTML(value.text)}</label></div>`
       case BlockType.TOGGLE:
-        return `<details class="gs-toggle"><summary>${convertToHTML(
+        return `<details data-notion="toggle"><summary>${convertToHTML(
           value.text
         )}</summary>It's a toggle!</details>`
       case BlockType.CHILD_PAGE:
-        return `<p class="gs-child-page">${value.title}</p>`
+        return `<p data-notion="child-page">${value.title}</p>`
       default:
         return options.get('unsupported')
           ? `❌ Unsupported block (${type === 'unsupported' ? 'unsupported by Notion API' : type})`
