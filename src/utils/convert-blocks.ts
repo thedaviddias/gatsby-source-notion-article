@@ -61,7 +61,7 @@ export const convertBlockToHTML = (blocks, options: ICreatePluginConfigRes): str
         return `<li>${convertToHTML(value.text)}</li>`
       case BlockType.TO_DO:
         return `<div class="gs-todo"><label for="${id}"><input type="checkbox" id="${id}" ${
-          value.checked && 'checked'
+          value.checked ? 'checked' : ''
         } />${' '}${convertToHTML(value.text)}</label></div>`
       case BlockType.TOGGLE:
         return `<details class="gs-toggle"><summary>${convertToHTML(

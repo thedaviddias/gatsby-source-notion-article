@@ -6,6 +6,9 @@ import {
   MockParagraphNull,
 } from '../../mockData/blocks.paragraph'
 import { MockHeadingOne, MockHeadingTwo, MockHeadingThree } from '../../mockData/blocks.headings'
+import { MockTodoUnchecked, MockTodoChecked } from '../../mockData/blocks.todo'
+import { MockToggle } from '../../mockData/blocks.toggle'
+import { MockChildPage } from '../../mockData/blocks.child-page'
 import { defaultAnnotations, defaultPluginConfigRes } from '../../mockData/defaults'
 
 describe('Convert blocks', () => {
@@ -106,6 +109,60 @@ describe('Convert blocks', () => {
       const fn = convertBlockToHTML(headingThree, defaultPluginConfigRes)
 
       expect(fn).toBe('<h4><span class=gs-undefined>Heading three</span></h4>')
+    })
+
+    it('should return an unchecked todo item', () => {
+      const todoItemUnchecked = [MockTodoUnchecked]
+
+      const fn = convertBlockToHTML(todoItemUnchecked, defaultPluginConfigRes)
+
+      expect(fn).toBe(
+        '<div class="gs-todo"><label for="657e68c6-1b09-478f-9912-c647e17077b8"><input type="checkbox" id="657e68c6-1b09-478f-9912-c647e17077b8"  /> <span class=gs-undefined>Lorem Ipsum Lorem Ipsum</span></label></div>'
+      )
+    })
+
+    it('should return a checked todo item', () => {
+      const todoItemChecked = [MockTodoChecked]
+
+      const fn = convertBlockToHTML(todoItemChecked, defaultPluginConfigRes)
+
+      expect(fn).toBe(
+        '<div class="gs-todo"><label for="657e68c6-1b09-478f-9912-c647e17077b8"><input type="checkbox" id="657e68c6-1b09-478f-9912-c647e17077b8" checked /> <span class=gs-undefined>Lorem Ipsum Lorem Ipsum</span></label></div>'
+      )
+    })
+
+    it('should return a toggle', () => {
+      const toggle = [MockToggle]
+
+      const fn = convertBlockToHTML(toggle, defaultPluginConfigRes)
+
+      expect(fn).toBe(
+        '<details class="gs-toggle"><summary><span class=gs-undefined>Lorem Ipsum Lorem Ipsum</span></summary>It\'s a toggle!</details>'
+      )
+    })
+
+    it('should return a child page', () => {
+      const childPage = [MockChildPage]
+
+      const fn = convertBlockToHTML(childPage, defaultPluginConfigRes)
+
+      expect(fn).toBe('<p class="gs-child-page">This is a child page</p>')
+    })
+
+    it('should return empty if block is not supported', () => {
+      const noSupported = []
+
+      const fn = convertBlockToHTML(noSupported, defaultPluginConfigRes)
+
+      expect(fn).toBe('')
+    })
+
+    it('should return a message if block is not supported', () => {
+      const noSupported = [{}]
+
+      const fn = convertBlockToHTML(noSupported, { get: () => 'unsupported' })
+
+      expect(fn).toBe('❌ Unsupported block (undefined)')
     })
   })
 })

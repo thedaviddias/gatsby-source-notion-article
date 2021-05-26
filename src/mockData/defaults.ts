@@ -10,15 +10,15 @@ export const defaultAnnotations: Annotations = {
   underline: false,
 }
 
-export const defaultPluginConfigRes: ICreatePluginConfigRes = {
-  get: jest.fn(),
-}
-
 export const defaultPluginConfig: ICreatePluginConfig = {
   token: '123456',
   databaseId: '12345',
   debug: false,
   unsupported: false,
+}
+
+export const defaultPluginConfigRes: ICreatePluginConfigRes = {
+  get: (arg) => '',
 }
 
 export const MockBlockBase = {

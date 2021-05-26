@@ -1,14 +1,15 @@
 import { MockBlockBase, defaultAnnotations } from './defaults'
 import { BlockType } from '../types'
 
-const MockParagraphBase = {
+const MockTodoBase = {
   ...MockBlockBase,
-  type: 'paragraph',
+  type: BlockType.TO_DO,
 }
 
-export const MockParagraph = {
-  ...MockParagraphBase,
-  [BlockType.PARAGRAPH]: {
+export const MockTodoUnchecked = {
+  ...MockTodoBase,
+  [BlockType.TO_DO]: {
+    checked: false,
     text: [
       {
         type: 'text',
@@ -23,24 +24,18 @@ export const MockParagraph = {
   },
 }
 
-export const MockParagraphNull = {
-  ...MockParagraphBase,
-  [BlockType.PARAGRAPH]: {
-    text: null,
-  },
-}
-
-export const MockParagraphEmpty = {
-  ...MockParagraphBase,
-  [BlockType.PARAGRAPH]: {
+export const MockTodoChecked = {
+  ...MockTodoBase,
+  [BlockType.TO_DO]: {
+    checked: true,
     text: [
       {
         type: 'text',
         text: {
-          content: '',
+          content: 'Lorem Ipsum Lorem Ipsum',
         },
         annotations: [defaultAnnotations],
-        plain_text: '',
+        plain_text: 'Lorem Ipsum Lorem Ipsum',
         href: null,
       },
     ],
