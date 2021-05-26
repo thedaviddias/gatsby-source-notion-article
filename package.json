@@ -1,6 +1,6 @@
 {
   "name": "gatsby-source-notion-article",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Gatsby source plugin to import articles made in Notion",
   "keywords": [
     "gatsby",

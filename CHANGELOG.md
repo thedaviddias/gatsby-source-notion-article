@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/thedaviddias/gatsby-source-notion-article/compare/v1.0.1...v1.1.0) (2021-05-26)
+
+
+### Features
+
+* convert classes to data attributes ([#12](https://github.com/thedaviddias/gatsby-source-notion-article/issues/12)) ([f458ea0](https://github.com/thedaviddias/gatsby-source-notion-article/commit/f458ea0be32fddbff13345cc0b765581da5786bf))
+
 ## [1.0.1](https://github.com/thedaviddias/gatsby-source-notion-article/compare/v1.0.0...v1.0.1) (2021-05-25)
 
 
